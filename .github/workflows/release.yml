@@ -107,7 +107,7 @@ jobs:
 
     - name: Publish release
       env:
-        GH_TOKEN: ${{ steps.release-token.outputs.token }}
+        GH_TOKEN: ${{ steps.release_token.outputs.token }}
       run: gh release edit "${{ steps.tag_version.outputs.new_tag }}" --draft=false --repo "${{ github.repository }}"
 
     - name: Notify Chapter-Website of new OpenAPI schema
